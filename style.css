@@ -1,0 +1,226 @@
+/* ===Import fonts=== */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:600&display=swap');
+
+/* ===Definition of some vars=== */
+:root {
+  --primary-color: hsl(322, 100%, 66%);
+  --very-pale-cyan: hsl(193, 100%, 96%);
+  --very-dark-cyan: hsl(192, 100%, 9%);
+  --grayish-blue: hsl(208, 11%, 55%);
+  --font-size: 1.125rem;
+  --font-family-headings: 'Poppins', sans-serif;
+  --font-weight-headings: 600;
+  --font-family-body: 'Open Sans', sans-serif;
+  --font-normal-weight-body: 400;
+  --font-bold-weight-body: 700;
+}
+
+/* ===Resets=== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: #fff;
+  font-size: var(--font-size);
+  font-family: var(--font-family-body);
+  font-weight: var(--font-normal-weight-body);
+  text-align: center;
+}
+
+img { width: 100%; }
+
+li { list-style: none; }
+
+a { color: #fff; }
+
+/* ===Utils here=== */
+.container { 
+  width: 1250px;
+  max-width: 90%;
+  margin: 0 auto;  
+}
+
+.btn {
+  border: none;
+  outline: none;
+  background: #fff;
+  color: var(--very-dark-cyan);
+  padding: 1rem 4rem;
+  border-radius: 2rem;
+  font-weight: var(--font-bold-weight-body);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+}
+.resp-btn { font-size: 0.75rem; }
+.pink-btn {
+  color: #fff;
+  background: var(--primary-color);
+}
+
+.card {
+  border-radius: 1.5rem;
+  background: #fff;
+  padding: 3rem;
+  box-shadow: 5px 5px 15px hsla(192, 100%, 9%, 0.2);
+}
+.card--sm {
+  width: 800px;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  margin-bottom: -3.125rem;
+}
+
+.main-title,
+.sub-title {
+  color: var(--very-dark-cyan);
+  font-family: var(--font-family-headings);
+  font-weight: var(--font-weight-headings);
+  margin-bottom: 2rem;
+}
+.main-title { font-size: 2rem; }
+.sub-title { font-size: 1.5rem; }
+
+.grey-text { color: var(--grayish-blue); }
+.blue-text { color: var(--very-dark-cyan); }
+
+/* ===Some custom styles=== */
+.header {
+  background-color: var(--very-pale-cyan);
+  background-image: url('images/bg-hero-mobile.svg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  padding: 5rem 0;
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6rem;
+}
+.header__logo { width: 130px; }
+.hero .btn { margin: 4rem 0; }
+
+.features { margin: 4rem auto; }
+.feature { margin-bottom: 2rem; }
+.feature:last-child { margin-bottom: 0; }
+.feature__img { margin-bottom: 4rem; }
+
+.footer {
+  background: var(--very-dark-cyan);
+  padding-top: 6rem;
+  padding-bottom: 3rem;
+  text-align: left;
+}
+.footer__logo { width: 15rem; margin-bottom: 2rem; }
+.footer__section > * { margin-bottom: 2rem; }
+.footer__section__about-us > *,
+.footer__section__useful-links > *,
+.footer__section__social-icons > * { padding-bottom: 1rem; }
+.footer__section__about-us li {
+  position: relative;
+  padding-left: 2rem;
+}
+.footer__section__about-us li:before {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 0;
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+}
+.footer__section__about-us li:nth-child(1):before {
+  background-image: url('images/icon-location.svg');
+}
+.footer__section__about-us li:nth-child(2):before {
+  background-image: url('images/icon-phone.svg');
+}
+.footer__section__about-us li:nth-child(3):before {
+  background-image: url('images/icon-email.svg');
+}
+
+.links li {
+  margin-bottom: 1rem;
+}
+.footer__section__social-icons {
+  display: flex;
+  justify-content: center;
+}
+
+.footer__section__social-icons li { margin-left: 1rem; }
+.footer__section__social-icons li:first-child { margin-left: 0; }
+.footer__section__social-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+.footer__copyright { text-align: center; }
+.footer__copyright__text { font-size: 0.85rem; }
+
+/* ===Media Query for Desktop=== */
+/* 
+In the mobile layout, I set the width to 80%
+according to the design (I think. Because I'm not very good at eyballing)
+*/
+@media (max-width: 800px) {
+  .resp-width {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+/*
+In the mobile layout, the btn for the header is smaller
+compared to the desktop layout.
+*/
+@media (min-width: 801px) {
+  body { text-align: left; }
+
+  .resp-btn { font-size: inherit; }
+  .navbar { margin-bottom: 3rem; }
+  .header { background-image: url('images/bg-hero-desktop.svg'); }
+  .header__logo { width: 210px; }
+
+  .hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .hero__img { flex: 55%; }
+  .hero__text { flex: 45%; margin-right: 5rem; }
+  .hero__text .btn { margin: 2rem 0 0; }
+
+  .features { margin: 10rem auto; }
+  .feature {
+    display: flex;
+    justify-content: center;
+  }
+  .feature__img { margin-bottom: 0; flex: 1; }
+  .feature__text { margin-left: 5rem; flex: 2; }
+  .feature:nth-child(2) .feature__img { order: 2;  margin-left: 5rem; }
+  .feature:nth-child(2) .feature__text { order: 1; margin-left: 0; }
+
+  .footer__section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 5rem;
+  }
+  .footer__section__useful-links {
+    display: flex;
+    justify-content: space-between;
+  }
+  .footer__section__social-icons {
+    display: inline-flex;
+    justify-content: flex-start;
+  }
+  .footer__copyright { text-align: right; }
+}
