@@ -202,12 +202,15 @@ compared to the desktop layout.
   .features { margin: 10rem auto; }
   .feature {
     display: flex;
-    justify-content: center;
+    align-items: center;
   }
   .feature__img { margin-bottom: 0; flex: 1; }
   .feature__text { margin-left: 5rem; flex: 2; }
-  .feature:nth-child(2) .feature__img { order: 2;  margin-left: 5rem; }
-  .feature:nth-child(2) .feature__text { order: 1; margin-left: 0; }
+  .feature:nth-child(1) .feature__img,
+  .feature:nth-child(3) .feature__img { order: 2;  margin-left: 5rem; }
+
+  .feature:nth-child(1) .feature__text,
+  .feature:nth-child(3) .feature__text { order: 1; margin-left: 0; }
 
   .footer__section {
     display: grid;
